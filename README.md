@@ -1,2 +1,111 @@
-# Image-Captioning-CNN-LSTM
-An end-to-end image captioning project using a CNN encoder (ResNet-50) and LSTM decoder in PyTorch. Includes vocabulary building, preprocessing, training with BLEU evaluation, and inference. Generates natural language captions for images with saved metrics, model checkpoints, and visualization outputs.
+# Image Captioning with CNN + LSTM (PyTorch)
+
+An end-to-end **image captioning** project that combines a **CNN encoder** (ResNet-50) with an **LSTM decoder** to generate natural language descriptions for images. Includes vocabulary building, tokenization, training, BLEU evaluation, and inference for generating captions on new images.
+
+---
+
+## Features
+- CNN encoder (pretrained ResNet-50, frozen backbone)  
+- LSTM decoder with embeddings, dropout, and teacher forcing  
+- Vocabulary building with NLTK tokenizer (`min_freq` configurable)  
+- Cross-entropy training + Adam optimizer  
+- BLEU-1..4 evaluation on validation set  
+- Visualizations: training curves, BLEU scores  
+- Saved artifacts:  
+  - `best_captioner.pt` (trained model)  
+  - `vocab.json` (vocabulary)  
+  - `metrics.json` (BLEU scores, loss)  
+
+---
+
+## Project Structure
+```
+image-captioning-cnn-lstm/
+├─ README.md
+├─ LICENSE
+├─ requirements.txt
+├─ data/
+│  ├─ captions.csv        # CSV: image_path, caption, split(train/val/test)
+│  └─ images/             # image files
+├─ src/
+│  ├─ models.py           # EncoderCNN, DecoderLSTM
+│  ├─ utils.py            # Vocabulary, dataset, BLEU, collate
+│  ├─ train.py            # training loop with checkpoints
+│  └─ infer.py            # inference script for generating captions
+└─ outputs/
+   ├─ best_captioner.pt
+   ├─ vocab.json
+   ├─ training_curves.png
+   ├─ bleu_scores.png
+   └─ metrics.json
+```
+
+---
+
+## Setup
+```bash
+python -m venv .venv
+# Windows:
+.venv\Scripts\activate
+# Linux/macOS:
+source .venv/bin/activate
+
+pip install -r requirements.txt
+
+# Download tokenizer models (once)
+python -c "import nltk; nltk.download('punkt'); nltk.download('punkt_tab')"
+```
+
+---
+
+## Data Preparation
+1. Collect a dataset (e.g., **Flickr8k** or **MSCOCO**).  
+2. Put all images under `data/images/`.  
+3. Create a `data/captions.csv` file with columns:
+   ```csv
+   image_path,caption,split
+   images/img1.jpg,A child in a pink dress is climbing stairs.,train
+   images/img1.jpg,A little girl goes into a wooden building.,train
+   images/img2.jpg,A dog is running through a grassy field.,val
+   ```
+4. Ensure `split` contains values: `train`, `val`, `test`.  
+
+---
+
+## Train the Model
+```bash
+python src/train.py --captions data/captions.csv --images-root data --outdir outputs --epochs 10 --batch-size 64 --embed-dim 256 --hidden-dim 512 --min-freq 1 --max-len 20 --lr 1e-3
+```
+
+Outputs:
+- `outputs/training_curves.png` → loss over epochs  
+- `outputs/bleu_scores.png` → BLEU-4 progression  
+- `outputs/best_captioner.pt` → best checkpoint  
+- `outputs/vocab.json` → vocabulary file  
+
+---
+
+## Run Inference
+```bash
+python src/infer.py --checkpoint outputs/best_captioner.pt --vocab outputs/vocab.json --image data/images/example1.jpg --max-len 20
+```
+
+Example Output:
+```
+blue square with the word example1
+```
+
+---
+
+## Results
+- Training & validation loss curves  
+- BLEU scores over epochs  
+- Example generated captions  
+
+---
+
+## Next Steps
+- Train longer (20+ epochs) for better captions  
+- Use a larger dataset (Flickr30k, MSCOCO)  
+- Try beam search decoding instead of greedy  
+- Fine-tune CNN layers for better feature extraction  
