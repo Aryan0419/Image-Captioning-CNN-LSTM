@@ -1,7 +1,12 @@
 # Image Captioning with CNN + LSTM (PyTorch)
 
-An end-to-end **image captioning** project that combines a **CNN encoder** (ResNet-50) with an **LSTM decoder** to generate natural language descriptions for images. Includes vocabulary building, tokenization, training, BLEU evaluation, and inference for generating captions on new images.
+This project demonstrates how deep learning can be applied to bridge the gap between computer vision and natural language processing. By combining a CNN encoder (ResNet-50) to extract meaningful visual features and an LSTM decoder to generate sequential text, the system learns to produce human-like captions for images.
 
+The workflow starts with vocabulary building and tokenization, ensuring captions are processed into numerical form. The model is then trained using teacher forcing and optimized with cross-entropy loss, while evaluation is performed using BLEU scores to measure caption quality.
+
+The repository is designed for both experimentation and reproducibility: it contains ready-to-use scripts for preprocessing, training, and inference, along with visualization outputs such as training loss curves, BLEU score progression, and example generated captions.
+
+By running the included code, you can train on toy datasets for quick tests or scale up to widely used datasets such as Flickr8k, Flickr30k, or MSCOCO for more realistic captions. This makes the project a portfolio-ready showcase of multimodal AI skills, covering both computer vision and language generation.
 ---
 
 ## Features
