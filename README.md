@@ -20,12 +20,9 @@ An end-to-end **image captioning** project that combines a **CNN encoder** (ResN
 
 ## 📊 Figures
 > The figures below are produced automatically in `outputs/` after training.
-| BLEU Scores |
-|---|---|
+
 <img width="1120" height="800" alt="training_curves" src="https://github.com/user-attachments/assets/eea430fc-f899-47a1-946b-88d80bf0fd8f" />
 
-| Training Curves |
-|---|---|
 <img width="1120" height="800" alt="bleu_scores" src="https://github.com/user-attachments/assets/4b05f11c-9504-4aa6-9b01-bef952e02824" />
 
 **Example Inference (overlay your own if available):**
